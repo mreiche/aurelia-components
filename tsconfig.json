@@ -7,6 +7,16 @@
     "preserveConstEnums": true,
     "skipLibCheck": true,
     "declaration": true,
+    // TypeScript 6 no longer auto-includes node_modules/@types; anything global
+    // has to be requested here. "src" itself needs no global types -- "jest" is
+    // kept so a test-side type check can extend this config. A test check also
+    // needs "node" (for `global`), which requires adding @types/node first.
+    "types": [
+      "jest"
+    ],
+    // TypeScript 6 turns "strict" on by default. The explicit strict* flags
+    // below stay in effect; this only keeps the pre-6 baseline for the rest.
+    "strict": false,
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
     "noPropertyAccessFromIndexSignature":  true,
@@ -20,15 +30,12 @@
       "es2021.intl",
       "dom"
     ],
-    /*
-      Required for moment()
-      import moment = require('moment');
-      @see https://momentjscom.readthedocs.io/en/latest/moment/00-use-it/09-typescript/
-    */
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "baseUrl": "src"
+    "rootDir": "src",
+    "outDir": "dist"
   },
+  "include": [
+    "src"
+  ],
   "exclude": [
     "node_modules",
     "dist"
