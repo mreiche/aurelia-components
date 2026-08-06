@@ -1,6 +1,6 @@
 {
 	"name": "mreiche-aurelia-components",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "Common useful components for the Aurelia 2 framework",
 	"repository": "https://github.com/mreiche/aurelia-components",
 	"author": "Mike Reiche <mike@reiche.world>",
